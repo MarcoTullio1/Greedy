@@ -44,21 +44,4 @@ public class TrocoTest {
 
         assertEquals(expResult.toString(), result.toString());
     }
-
-	/**
-	 * Teste da função ProblemaDoTroco.sortReverse(int[] vector)
-	 */
-	@Test
-	public void testSortReverse() {
-		System.out.println("Ordena Vetor\n");
-
-		int[] input = {20, 50, 1, 100, 2, 5, 10};
-		int[] expOutput = {100, 50, 20, 10, 5, 2, 1}; 
-		System.out.println("Expected output: " + Arrays.toString(expOutput));
-
-		int[] output = ProblemaDoTroco.sortReverse(input);
-		System.out.println("Output:          " + Arrays.toString(output) + "\n");		
-
-		assertArrayEquals(expOutput, output);
-	}
 }
