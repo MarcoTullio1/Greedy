@@ -29,7 +29,10 @@ public class ProblemaDoTroco {
 
     /**
      * Calcula o troco a ser dado para um cliente com a menor quantidade de
-     * cédulas possível. Obs.: Algoritmo guloso, haverá casos em que a menor
+     * cédulas possível, dada uma quantidade infinita de notas e moedas de
+     * determinados valores, passado pelo usuário.
+     * 
+     * Obs.: Algoritmo guloso, haverá casos em que a menor
      * quantidade dada pelo código não será a ideal (a solução ótima).
      *
      * @param conta a conta a ser paga pelo cliente
