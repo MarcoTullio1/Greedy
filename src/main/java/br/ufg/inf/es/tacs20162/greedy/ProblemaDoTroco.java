@@ -1,12 +1,31 @@
 package br.ufg.inf.es.tacs20162.greedy;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
 
 /**
  *
  * @author gustavosotnas
  */
 public class ProblemaDoTroco {
+
+	/**
+	 * Estrutura de dados ("struct") que armazena as informações sobre o troco
+	 * a ser devolvido.
+	 */
+	public static class Troco {
+
+		/** Valor a ser devolvido de troco. */
+		public double troco;
+
+		/** A forma de distribuição de células que será entregue de troco:
+		 * <"valor das cédulas", "quantidade de cédulas daquele valor">*/
+		public HashMap<Integer, Integer> notas = new HashMap<Integer, Integer>();
+
+		/** A forma de distribuição de moedas que será entregue de troco:
+		 * <"valor das moedas", "quantidade de moedas daquele valor">*/
+		public HashMap<Integer, Integer> moedas = new HashMap<Integer, Integer>();
+	}
 
     /**
      * Calcula o troco a ser dado para um cliente com a menor quantidade de
