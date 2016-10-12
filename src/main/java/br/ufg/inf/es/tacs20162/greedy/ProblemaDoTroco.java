@@ -19,11 +19,11 @@ public class ProblemaDoTroco {
 		public double troco;
 
 		/** A forma de distribuição de células que será entregue de troco:
-		 * <"valor das cédulas", "quantidade de cédulas daquele valor">*/
+		 * ("valor das cédulas", "quantidade de cédulas daquele valor")*/
 		public HashMap<Integer, Integer> notas = new HashMap<Integer, Integer>();
 
 		/** A forma de distribuição de moedas que será entregue de troco:
-		 * <"valor das moedas", "quantidade de moedas daquele valor">*/
+		 * ("valor das moedas", "quantidade de moedas daquele valor")*/
 		public HashMap<Integer, Integer> moedas = new HashMap<Integer, Integer>();
 
 		@Override
