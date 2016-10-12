@@ -52,7 +52,7 @@ public class TrocoTest {
 		System.out.println("Expected output: " + Arrays.toString(expOutput));
 
 		int[] output = ProblemaDoTroco.sortReverse(input);
-		System.out.println("Output:          " + Arrays.toString(output));		
+		System.out.println("Output:          " + Arrays.toString(output) + "\n");		
 
 		assertArrayEquals(expOutput, output);
 	}
