@@ -35,9 +35,14 @@ public class TrocoTest {
         expResult.moedas.put(25, 0);
         expResult.moedas.put(10, 0);
         expResult.moedas.put(5, 0); // troco sem moedas
+        System.out.println("Expected output: \n");
+        System.out.println(expResult.toString() + "\n");
 
         Troco result = ProblemaDoTroco.calculaTroco(notasDisponiveis, moedasDisponiveis, conta, pago);
-        assertEquals(expResult, result);
+        System.out.println("Output: \n");
+        System.out.println(expResult.toString() + "\n");
+
+        assertEquals(expResult.toString(), result.toString());
     }
 
 	/**
