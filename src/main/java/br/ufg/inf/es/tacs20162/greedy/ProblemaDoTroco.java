@@ -39,7 +39,7 @@ public class ProblemaDoTroco {
      * @throws IllegalArgumentException quando o cliente dá menos dinheiro que
      * deveria
      */
-    public static Troco calculaTroco(int[] notasDisponiveis, int[] moedasDisponveis,
+/*    public static Troco calculaTroco(int[] notasDisponiveis, int[] moedasDisponveis,
     		double conta, double pago) throws IllegalArgumentException {
 
     	Troco resultado = new Troco();
@@ -100,5 +100,32 @@ public class ProblemaDoTroco {
         }
         return resultado;
     }
+*/
+	/**
+	 * Ordena um vetor de números inteiros qualquer na ordem decrescente.
+	 * 
+	 * Código baseado em: http://stackoverflow.com/a/3523066
+	 * 
+	 * @param vector o vetor desordenado.
+	 * @return o vetor ordenado decrescentemente.
+	 */
+    static int[] sortReverse(int[] vector) {
 
+    	java.util.Arrays.sort(vector); // sort
+
+        int left = 0;
+        int right = vector.length - 1;
+
+        while( left < right ) {
+            // swap the values at the left and right indices
+            int temp = vector[left];
+            vector[left] = vector[right];
+            vector[right] = temp;
+
+            // move the left and right index pointers in toward the center
+            left++;
+            right--;
+        }
+        return vector;
+    }
 }
