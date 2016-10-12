@@ -27,21 +27,25 @@ public class ProblemaDoTroco {
 		public HashMap<Integer, Integer> moedas = new HashMap<Integer, Integer>();
 	}
 
-    /**
+	/**
      * Calcula o troco a ser dado para um cliente com a menor quantidade de
      * cédulas possível, dada uma quantidade infinita de notas e moedas de
      * determinados valores, passado pelo usuário.
      * 
      * Obs.: Algoritmo guloso, haverá casos em que a menor
      * quantidade dada pelo código não será a ideal (a solução ótima).
-     *
-     * @param conta a conta a ser paga pelo cliente
-     * @param pago a quantia que o cliente pagou pela conta
-     * @return um texto explicando quais e quantas notas devem ser dadas para o
-     * cliente receber seu troco
-     * @throws IllegalArgumentException quando o cliente dá menos dinheiro que
+     * 
+	 * @param notasDisponiveis que valores de notas existem no caixa para
+	 * fazer troco
+	 * @param moedasDisponiveis que valores de moedas existem no caixa para
+	 * fazer troco
+	 * @param conta a quantia a ser paga pelo cliente
+	 * @param pago a quantia que o cliente pagou pela conta
+	 * @return a quantia a ser dada de troco, com informação de quantas notas e
+	 * moedas de cada valor devem ser dadas para o cliente receber seu troco
+	 * @throws IllegalArgumentException quando o cliente dá menos dinheiro que
      * deveria
-     */
+	 */
     public static Troco calculaTroco(int[] notasDisponiveis, int[] moedasDisponiveis,
     		double conta, double pago) throws IllegalArgumentException {
 
@@ -71,7 +75,7 @@ public class ProblemaDoTroco {
         int qtdNotasNecessarias;
 
         int contadorNota = 0;
-        
+
         HashMap<Integer, Integer> resultado = new HashMap<Integer, Integer>();
 
         valor = (int) troco;
@@ -124,7 +128,7 @@ public class ProblemaDoTroco {
         int left = 0;
         int right = vector.length - 1;
 
-        while( left < right ) {
+        while (left < right) {
             // swap the values at the left and right indices
             int temp = vector[left];
             vector[left] = vector[right];
