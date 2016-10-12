@@ -42,7 +42,7 @@ public class ProblemaDoTroco {
      * @throws IllegalArgumentException quando o cliente dá menos dinheiro que
      * deveria
      */
-/*    public static Troco calculaTroco(int[] notasDisponiveis, int[] moedasDisponveis,
+    public static Troco calculaTroco(int[] notasDisponiveis, int[] moedasDisponiveis,
     		double conta, double pago) throws IllegalArgumentException {
 
     	Troco resultado = new Troco();
@@ -52,7 +52,7 @@ public class ProblemaDoTroco {
             resultado.troco = pago - conta;
 
             resultado.notas = calculaNotas(notasDisponiveis, resultado.troco);
-            resultado.moedas = calculaMoedas(moedasDisponveis, resultado.troco);
+            resultado.moedas = calculaMoedas(moedasDisponiveis, resultado.troco);
 
             return resultado;
 
@@ -65,45 +65,50 @@ public class ProblemaDoTroco {
 
     private static HashMap<Integer, Integer> calculaNotas (int[] notasDisponiveis, double troco) {
 
-        int nota[] = {100, 50, 20, 10, 5, 2, 1};
+        notasDisponiveis = sortReverse(notasDisponiveis);
 
         int valor;
-        int ct;
+        int qtdNotasNecessarias;
 
         int contadorNota = 0;
+        
+        HashMap<Integer, Integer> resultado = new HashMap<Integer, Integer>();
 
         valor = (int) troco;
         while (valor != 0) {
-            ct = valor / nota[contadorNota]; // calculando a qtde de notas
-            if (ct != 0) {
-                resultado = resultado + (ct + " nota(s) de R$" + nota[contadorNota] + "\n");
-                valor = valor % nota[contadorNota]; // sobra
+            qtdNotasNecessarias = valor / notasDisponiveis[contadorNota];
+            if (qtdNotasNecessarias != 0) {
+                resultado.put(notasDisponiveis[contadorNota], qtdNotasNecessarias); 
+                valor = valor % notasDisponiveis[contadorNota]; // sobra
             }
             contadorNota++; // próxima nota
         }
         return resultado;
     }
 
-    private static HashMap<Integer, Integer> calculaMoedas (int[] moedasDisponveis, double troco) {
+    private static HashMap<Integer, Integer> calculaMoedas (int[] moedasDisponiveis, double troco) {
 
-        int centavos[] = {50, 25, 10, 5, 1};
+    	moedasDisponiveis = sortReverse(moedasDisponiveis);
+
+        int valor;
+        int qtdMoedasNecessarias;
 
         int contadorMoeda = 0;
-        int valor;
-        int ct;
+
+        HashMap<Integer, Integer> resultado = new HashMap<Integer, Integer>();
 
         valor = (int) Math.round((troco - (int) troco) * 100);
         while (valor != 0) {
-            ct = valor / centavos[contadorMoeda]; // calculando a qtde de moedas
-            if (ct != 0) {
-                resultado = resultado + (ct + " moeda(s) de" + centavos[contadorMoeda] + "centavo(s)\n");
-                valor = valor % centavos[contadorMoeda]; // sobra
+            qtdMoedasNecessarias = valor / moedasDisponiveis[contadorMoeda];
+            if (qtdMoedasNecessarias != 0) {
+            	resultado.put(moedasDisponiveis[contadorMoeda], qtdMoedasNecessarias);
+                valor = valor % moedasDisponiveis[contadorMoeda]; // sobra
             }
-            contadorMoeda++; // próximo centavo
+            contadorMoeda++; // próxima moeda
         }
         return resultado;
     }
-*/
+
 	/**
 	 * Ordena um vetor de números inteiros qualquer na ordem decrescente.
 	 * 
