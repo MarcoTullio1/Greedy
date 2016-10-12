@@ -25,6 +25,23 @@ public class ProblemaDoTroco {
 		/** A forma de distribuição de moedas que será entregue de troco:
 		 * <"valor das moedas", "quantidade de moedas daquele valor">*/
 		public HashMap<Integer, Integer> moedas = new HashMap<Integer, Integer>();
+
+		@Override
+		public String toString() {
+
+			StringBuilder output = new StringBuilder();
+			DecimalFormat formatter = new DecimalFormat("###,##0.00");
+
+			output.append("Troco: R$ " + formatter.format(this.troco) + "\n\n");
+
+			// print HashMap
+			for (HashMap.Entry<Integer, Integer> nota : this.notas.entrySet()) {
+			    output.append(
+			    	(nota.getValue()+" notas de R$ "+formatter.format(nota.getKey())+"\n"));
+			}
+
+			return output.toString();
+		}
 	}
 
 	/**
