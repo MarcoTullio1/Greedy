@@ -39,31 +39,28 @@ public class ProblemaDoTroco {
      * @throws IllegalArgumentException quando o cliente dá menos dinheiro que
      * deveria
      */
-    public static String calculaTroco(double conta, double pago) throws IllegalArgumentException {
+    public static Troco calculaTroco(int[] notasDisponiveis, int[] moedasDisponveis,
+    		double conta, double pago) throws IllegalArgumentException {
 
-        DecimalFormat formatador = new DecimalFormat("###,##0.00");
+    	Troco resultado = new Troco();
 
         if (pago >= conta) {
 
-            String resultado;
-            double troco;
+            resultado.troco = pago - conta;
 
-            troco = pago - conta;
-            resultado = "\nTroco = R$" + formatador.format(troco) + "\n\n";
-
-            resultado = calculaNotas(troco, resultado);
-            resultado = calculaMoedas(troco, resultado);
-
-            resultado = resultado + "\n";
+            resultado.notas = calculaNotas(notasDisponiveis, resultado.troco);
+            resultado.moedas = calculaMoedas(moedasDisponveis, resultado.troco);
 
             return resultado;
+
         } else {
+        	DecimalFormat formatador = new DecimalFormat("###,##0.00");
             throw new IllegalArgumentException("Pagamento insuficiente, faltam "
                     + "R$" + formatador.format(conta - pago) + "\n");
         }
     }
 
-    private static String calculaNotas(final double troco, String resultado) {
+    private static HashMap<Integer, Integer> calculaNotas (int[] notasDisponiveis, double troco) {
 
         int nota[] = {100, 50, 20, 10, 5, 2, 1};
 
@@ -84,7 +81,7 @@ public class ProblemaDoTroco {
         return resultado;
     }
 
-    private static String calculaMoedas(final double troco, String resultado) {
+    private static HashMap<Integer, Integer> calculaMoedas (int[] moedasDisponveis, double troco) {
 
         int centavos[] = {50, 25, 10, 5, 1};
 
