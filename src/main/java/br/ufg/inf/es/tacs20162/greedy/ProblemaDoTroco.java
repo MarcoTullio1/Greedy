@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
  *
  * @author gustavosotnas
  */
-public class Troco {
+public class ProblemaDoTroco {
 
     /**
      * Calcula o troco a ser dado para um cliente com a menor quantidade de

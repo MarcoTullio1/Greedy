@@ -21,7 +21,7 @@ public class TrocoTest {
         double pago = 50.00; // dinheiro pago pelo cliente
 
         //String expResult = "";
-        String result = Troco.calculaTroco(conta, pago);
+        String result = ProblemaDoTroco.calculaTroco(conta, pago);
         //assertEquals(expResult, result);
         System.out.println(result);
     }
