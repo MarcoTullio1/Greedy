@@ -43,7 +43,7 @@ public class ProblemaDoTroco {
 			// print HashMap de moedas
 			for (HashMap.Entry<Integer, Integer> moeda : this.moedas.entrySet()) {
 			    output.append(
-			    	(moeda.getValue()+" moedas de R$ "+formatter.format(moeda.getKey())+"\n"));
+			    	(moeda.getValue()+" moedas de R$ "+formatter.format((double) moeda.getKey()/100)+"\n"));
 			}
 
 			return output.toString();
