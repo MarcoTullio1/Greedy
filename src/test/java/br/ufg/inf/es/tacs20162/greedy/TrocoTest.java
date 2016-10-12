@@ -2,7 +2,6 @@ package br.ufg.inf.es.tacs20162.greedy;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import java.util.Arrays;
 
 import br.ufg.inf.es.tacs20162.greedy.ProblemaDoTroco.Troco;
 

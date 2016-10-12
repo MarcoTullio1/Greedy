@@ -108,7 +108,7 @@ public class ProblemaDoTroco {
      */
     private static HashMap<Integer, Integer> calculaNotas (int[] notasDisponiveis, double troco) {
 
-        notasDisponiveis = sortReverse(notasDisponiveis);
+        int[] notas = sortReverse(notasDisponiveis);
 
         int valor;
         int qtdNotasNecessarias;
@@ -119,10 +119,10 @@ public class ProblemaDoTroco {
 
         valor = (int) troco;
         while (valor != 0) {
-            qtdNotasNecessarias = valor / notasDisponiveis[contadorNota];
+            qtdNotasNecessarias = valor / notas[contadorNota];
             if (qtdNotasNecessarias != 0) {
-                resultado.put(notasDisponiveis[contadorNota], qtdNotasNecessarias); 
-                valor = valor % notasDisponiveis[contadorNota]; // sobra
+                resultado.put(notas[contadorNota], qtdNotasNecessarias); 
+                valor = valor % notas[contadorNota]; // sobra
             }
             contadorNota++; // próxima nota
         }
@@ -143,7 +143,7 @@ public class ProblemaDoTroco {
      */
     private static HashMap<Integer, Integer> calculaMoedas (int[] moedasDisponiveis, double troco) {
 
-    	moedasDisponiveis = sortReverse(moedasDisponiveis);
+    	int[] moedas = sortReverse(moedasDisponiveis);
 
         int valor;
         int qtdMoedasNecessarias;
@@ -154,10 +154,10 @@ public class ProblemaDoTroco {
 
         valor = (int) Math.round((troco - (int) troco) * 100);
         while (valor != 0) {
-            qtdMoedasNecessarias = valor / moedasDisponiveis[contadorMoeda];
+            qtdMoedasNecessarias = valor / moedas[contadorMoeda];
             if (qtdMoedasNecessarias != 0) {
-            	resultado.put(moedasDisponiveis[contadorMoeda], qtdMoedasNecessarias);
-                valor = valor % moedasDisponiveis[contadorMoeda]; // sobra
+            	resultado.put(moedas[contadorMoeda], qtdMoedasNecessarias);
+                valor = valor % moedas[contadorMoeda]; // sobra
             }
             contadorMoeda++; // próxima moeda
         }
