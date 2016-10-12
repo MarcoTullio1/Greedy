@@ -46,7 +46,8 @@ public class TrocoTest {
     }
 
     /**
-     * Caso de teste do algoritmo do Problema do Troco que NÃO dá uma solução ótima.
+     * Caso de teste do algoritmo do Problema do Troco que NÃO dá uma solução ótima,
+     * o teste "falha" propositalmente.
      */
     @Test
     public void testCalculaTroco() {

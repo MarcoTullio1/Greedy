@@ -90,6 +90,22 @@ public class ProblemaDoTroco {
         }
     }
 
+    /**
+     * Implementação do "Problema do Troco" em Java.
+     * O "Problema do Troco" é um algoritmo guloso que, dado um caixa que tem 
+     * um conjunto de infinitas notas de determinados valores e um troco que
+     * tem de ser dado a um cliente, o algoritmo sugere supostamente a melhor
+     * forma de dar o troco para ele.
+     * 
+     * Obs.: Esta implementação calcula apenas a parte inteira do troco (cédulas).
+     * Veja `calculaMoedas()`, que trata da parte decimal do troco (moedas / centavos).
+     * 
+     * @param notasDisponiveis que valores de notas existem no caixa para
+	 * fazer troco
+     * @param troco a quantia que o caixa deve dar para o cliente como troco
+     * @return quantas notas de cada valor devem ser dadas para o cliente 
+     * receber seu troco
+     */
     private static HashMap<Integer, Integer> calculaNotas (int[] notasDisponiveis, double troco) {
 
         notasDisponiveis = sortReverse(notasDisponiveis);
@@ -113,6 +129,18 @@ public class ProblemaDoTroco {
         return resultado;
     }
 
+    /**
+     * Implementação do "Problema do Troco" em Java, adaptado para o cálculo do
+     * troco em moedas, apenas.
+     * 
+     * Funciona de forma análoga ao `calculaNotas()`, com algumas diferenças.
+     * 
+     * @param moedasDisponiveis que valores de moedas existem no caixa para
+	 * fazer troco
+     * @param troco a quantia que o caixa deve dar para o cliente como troco
+     * @return quantas moedas de cada valor devem ser dadas para o cliente 
+     * receber seu troco
+     */
     private static HashMap<Integer, Integer> calculaMoedas (int[] moedasDisponiveis, double troco) {
 
     	moedasDisponiveis = sortReverse(moedasDisponiveis);
