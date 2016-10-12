@@ -138,7 +138,7 @@ public class ProblemaDoTroco {
 	 * @param vector o vetor desordenado.
 	 * @return o vetor ordenado decrescentemente.
 	 */
-    static int[] sortReverse(int[] vector) {
+    private static int[] sortReverse(int[] vector) {
 
     	java.util.Arrays.sort(vector); // sort
 
