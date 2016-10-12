@@ -20,7 +20,7 @@ public class Troco {
      * @throws IllegalArgumentException quando o cliente dá menos dinheiro que
      * deveria
      */
-    public String calculaTroco(double conta, double pago) throws IllegalArgumentException {
+    public static String calculaTroco(double conta, double pago) throws IllegalArgumentException {
 
         DecimalFormat formatador = new DecimalFormat("###,##0.00");
 
@@ -32,8 +32,8 @@ public class Troco {
             troco = pago - conta;
             resultado = "\nTroco = R$" + formatador.format(troco) + "\n\n";
 
-            resultado = this.calculaNotas(troco, resultado);
-            resultado = this.calculaMoedas(troco, resultado);
+            resultado = calculaNotas(troco, resultado);
+            resultado = calculaMoedas(troco, resultado);
 
             resultado = resultado + "\n";
 
@@ -44,7 +44,7 @@ public class Troco {
         }
     }
 
-    private String calculaNotas(final double troco, String resultado) {
+    private static String calculaNotas(final double troco, String resultado) {
 
         int nota[] = {100, 50, 20, 10, 5, 2, 1};
 
@@ -65,7 +65,7 @@ public class Troco {
         return resultado;
     }
 
-    private String calculaMoedas(final double troco, String resultado) {
+    private static String calculaMoedas(final double troco, String resultado) {
 
         int centavos[] = {50, 25, 10, 5, 1};
 
