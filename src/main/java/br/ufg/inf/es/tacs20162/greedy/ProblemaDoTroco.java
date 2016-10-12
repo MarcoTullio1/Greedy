@@ -34,10 +34,16 @@ public class ProblemaDoTroco {
 
 			output.append("Troco: R$ " + formatter.format(this.troco) + "\n\n");
 
-			// print HashMap
+			// print HashMap de notas
 			for (HashMap.Entry<Integer, Integer> nota : this.notas.entrySet()) {
 			    output.append(
 			    	(nota.getValue()+" notas de R$ "+formatter.format(nota.getKey())+"\n"));
+			}
+
+			// print HashMap de moedas
+			for (HashMap.Entry<Integer, Integer> moeda : this.moedas.entrySet()) {
+			    output.append(
+			    	(moeda.getValue()+" moedas de R$ "+formatter.format(moeda.getKey())+"\n"));
 			}
 
 			return output.toString();
