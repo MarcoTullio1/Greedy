@@ -74,4 +74,38 @@ public class TrocoTest {
 
         assertEquals(expResult.toString(), result.toString());
     }
+
+    /**
+     * Caso de teste do algoritmo do Problema do Troco com moedas (solução ótima)
+     */
+    @Test
+    public void testCalculaTrocoMoedasOtimo() {
+
+        System.out.println("================================================\n"
+        				 + "Problema do Troco (com moedas) com solução ótima\n"
+        				 + "================================================\n");
+
+        double conta = 27.25; // conta a ser paga
+        double pago = 50.00; // dinheiro pago pelo cliente
+        int[] notasDisponiveis = {1, 2, 5, 10, 50}; // reais
+        int[] moedasDisponiveis = {5, 10, 50, 100}; // centavos
+
+        Troco expResult = new Troco(); // Resultado esperado:
+        expResult.troco = 22.75;   // Troco de R$ 22,75
+        expResult.notas.put(10, 2);// 2 nota de R$ 10,00
+        expResult.notas.put(2, 1); // 1 nota de R$ 2,00
+        expResult.moedas.put(50, 1);//1 moeda de R$ 0,50
+        expResult.moedas.put(10, 2);//2 moeda de R$ 0,10
+        expResult.moedas.put(5, 1); //1 moeda de R$ 0,05
+        System.out.println("Expected output:\n"
+        				 + "----------------\n");
+        System.out.println(expResult.toString());
+
+        Troco result = ProblemaDoTroco.calculaTroco(notasDisponiveis, moedasDisponiveis, conta, pago);
+        System.out.println("Output:\n"
+        				 + "-------\n");
+        System.out.println(result.toString() + "\n");
+
+        assertEquals(expResult.toString(), result.toString());
+    }
 }
